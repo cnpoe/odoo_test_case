@@ -25,4 +25,4 @@ class ProductSaleType(models.Model):
         string='Combo relacionado'
     )
 
-    manual_price = fields.Integer(string='Price')
+    manual_price = fields.Monetary(string='Price')
