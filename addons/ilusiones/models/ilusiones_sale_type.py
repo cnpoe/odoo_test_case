@@ -25,4 +25,11 @@ class ProductSaleType(models.Model):
         string='Combo relacionado'
     )
 
+    user_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Cliente'
+    )
+
     manual_price = fields.Monetary(string='Price')
+    serial_number = fields.Char(string='Número de serie')
+    contract = fields.Char(string='Numero de contrato')
