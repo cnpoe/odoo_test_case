@@ -30,6 +30,6 @@ class ProductSaleType(models.Model):
         string='Cliente'
     )
 
-    manual_price = fields.Monetary(string='Price')
+    combo_price = fields.Float(string='Precio de combo', digits=(16, 4))
     serial_number = fields.Char(string='Número de serie')
     contract = fields.Char(string='Numero de contrato')
