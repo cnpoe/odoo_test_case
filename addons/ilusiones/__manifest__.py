@@ -19,5 +19,6 @@
     'installable': True,
     'category': 'Test',
     'data': [
+        'views/product_template_views.xml',
     ],
 }
