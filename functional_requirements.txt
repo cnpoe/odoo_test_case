@@ -1,0 +1,15 @@
+
+- agregar tipo producto combo product.type es un selection
+
+-crear modelo intermedio para generar cobro de renta cada dia de pago
+    - añadir de dia de cobro
+    - relacionar tipo de venta
+    - relacionar conceptos que se cobran
+    - relacionar precio que se cobra
+
+- agregar modelo intermedio a product.product
+    - dependiendo de la que se elija se piden los campos
+    - solamente mostrar productos con existencia en seleccion
+
+- agregar detalle en click en línea de pedido
+- descontar producto de inventario al finalizar la compra

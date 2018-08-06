@@ -9,6 +9,8 @@
     'website': 'https://www.github.com/cnpoe/',
     'depends': [
         'base',
+        'stock',
+        'sale_management',
     ],
     'application': True,
     'summary': 'Custom application for Ilusiones S.A de C.V. odoo 11',
