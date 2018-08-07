@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="view_ilusiones_combo_form" model="ir.ui.view">
+            <field name="name">ilusiones.product.sale.type.form</field>
+            <field name="model">ilusiones.product.sale.type</field>
+
+            <field name="arch" type="xml">
+                <form string="Combos">
+                    <header>Crear combos</header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="sale_type"/>
+                                <field name="product_id" invisible="1"/>
+                                <field name="user_id" invisible="1"/>
+                                <field name="active"/>
+                                <field name="combo_price"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="serial_number"/>
+                                <field name="contract"/>
+                                <field name="pay_day"/>
+                            </group>
+                        </group>
+                        <group name="group_bottom">
+                            <field name="sale_products"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

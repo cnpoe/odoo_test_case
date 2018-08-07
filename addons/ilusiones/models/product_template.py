@@ -4,7 +4,8 @@ from odoo import models, fields, api
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    type = fields.Selection(selection_add=[('Combo', 'Combo Product')])
+    type = fields.Selection(selection_add=[('Combo', 'combo')])
+    
     product_combo = fields.One2many(
         comodel_name='ilusiones.product.sale.type',
         inverse_name='product_id',

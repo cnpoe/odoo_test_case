@@ -1,6 +1,7 @@
 
 - agregar tipo producto combo product.type es un selection
 
+# DONE
 -crear modelo intermedio para generar cobro de renta cada dia de pago
     - añadir de dia de cobro
     - relacionar tipo de venta

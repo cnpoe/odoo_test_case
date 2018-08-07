@@ -20,5 +20,7 @@
     'category': 'Test',
     'data': [
         'views/product_template_views.xml',
+        'views/res_partner_view.xml',
+        'views/combo_products_view.xml',
     ],
 }
