@@ -4,10 +4,7 @@ from odoo import models, fields, api
 class SaleOderLine(models.Model):
     _inherit = 'sale.order.line'
 
-    combo_line = fields.Boolean(
-        string='Is product consumible in combo',
-        default=False
-    )
+    active = fields.Boolean(default=True)
 
     @api.model
     def create(self, vals):

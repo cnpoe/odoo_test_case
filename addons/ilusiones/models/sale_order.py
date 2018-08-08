@@ -15,7 +15,7 @@ class SaleOrder(models.Model):
             'order_id': order_id,
             'product_id': product.id,
             'price_unit': 0,
-            'combo_line': True
+            'active': False
         }
         return line
 
