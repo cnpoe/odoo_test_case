@@ -12,6 +12,7 @@
                     <sheet>
                         <group name="group_top">
                             <group name="group_left">
+                                <field name="description"/>
                                 <field name="sale_type" required="True"/>
                                 <field name="product_id" invisible="1"/>
                                 <field name="user_id" invisible="1"/>

@@ -14,7 +14,7 @@
     ],
     'application': True,
     'summary': 'Custom application for Ilusiones S.A de C.V. odoo 11',
-    'version': '0.1',
+    'version': '0.2',
     'license': 'LGPL-3',
     'installable': True,
     'category': 'Test',
@@ -23,5 +23,6 @@
         'views/product_template_views.xml',
         'views/res_partner_view.xml',
         'views/combo_products_view.xml',
+        'views/sale_order_view.xml',
     ],
 }
