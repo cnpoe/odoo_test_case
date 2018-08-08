@@ -10,13 +10,14 @@ class ProductSaleType(models.Model):
     # TODO: create catalog for custom sale types
     sale_type = fields.Selection(
         selection=[
-            ('prepago', 'Prepago'),
-            ('plan', 'Plan'),
-            ('activacion', 'Activacion')
+            ('Prepago', 'Prepago'),
+            ('Plan', 'Plan'),
+            ('Activación', 'Activación')
         ],
         string='Tipo de venta'
     )
 
+    # TODO: Organize products depends on service, insurance, stockable
     sale_products = fields.Many2many(
         comodel_name='product.product',
         string='Productos en esta venta'
@@ -32,7 +33,7 @@ class ProductSaleType(models.Model):
         string='Cliente'
     )
 
-    combo_price = fields.Float(string='Precio de combo', digits=(16, 4))
-    serial_number = fields.Char(string='Número de serie')
-    contract = fields.Char(string='Numero de contrato')
-    active = fields.Boolean(string='Is active?')
+    description = fields.Char(string="Descripción", required=True)
+    serial_number = fields.Char(string='Número de serie', default="")
+    contract = fields.Char(string='Número de contrato', default="")
+    active = fields.Boolean(string='Is active?', default=True)

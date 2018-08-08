@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<odoo>
+    <act_window id= "action_product_combo"
+        name="Combos de producto"
+        res_model="ilusiones.product.sale.type"
+        view_mode="tree,form"
+    />
+    <menuitem id="menu_todo_task"
+        name="Combos"
+        action="action_product_combo"
+        parent="sale.product_menu_catalog"
+    />
+</odoo>

@@ -12,23 +12,35 @@
                     <sheet>
                         <group name="group_top">
                             <group name="group_left">
-                                <field name="sale_type"/>
+                                <field name="sale_type" required="True"/>
                                 <field name="product_id" invisible="1"/>
                                 <field name="user_id" invisible="1"/>
-                                <field name="active"/>
-                                <field name="combo_price"/>
+                                <field name="active" string="Activo"/>
                             </group>
                             <group name="group_right">
-                                <field name="serial_number"/>
-                                <field name="contract"/>
+                                <field name="serial_number" attrs="{'invisible': [('sale_type','=','Plan')], 'required': [('sale_type','!=','Plan')]}"/>
+                                <field name="contract" attrs="{'invisible': [('sale_type','=','Plan')], 'required': [('sale_type','!=','Plan')]}"/>
                                 <field name="pay_day"/>
                             </group>
                         </group>
                         <group name="group_bottom">
-                            <field name="sale_products"/>
+                            <field name="sale_products" required="True"/>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="iew_ilusiones_combo_tree" model="ir.ui.view">
+            <field name="name">ilusiones.product.sale.type.form</field>
+            <field name="model">ilusiones.product.sale.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="description"/>
+                    <field name="sale_type"/>
+                    <field name="serial_number"/>
+                    <field name="contract"/>
+                </tree>
             </field>
         </record>
     </data>

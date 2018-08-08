@@ -6,11 +6,18 @@
     - añadir de dia de cobro
     - relacionar tipo de venta
     - relacionar conceptos que se cobran
+    # NOT DONE
     - relacionar precio que se cobra
 
 - agregar modelo intermedio a product.product
+    # DONE
     - dependiendo de la que se elija se piden los campos
     - solamente mostrar productos con existencia en seleccion
 
 - agregar detalle en click en línea de pedido
 - descontar producto de inventario al finalizar la compra
+
+
+- crear lineas de pedido para los productos que son almacenables y
+sobreescribir agregar un estado para que no se muestren
+_action_launch_procurement_rule
