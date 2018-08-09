@@ -20,7 +20,19 @@ class ProductSaleType(models.Model):
     # TODO: Organize products depends on service, insurance, stockable
     sale_products = fields.Many2many(
         comodel_name='product.product',
-        string='Productos en esta venta'
+        string='Productos almacenables en esta venta',
+        relation='combo_almacenables'
+    )
+
+    services = fields.Many2many(
+        comodel_name='product.product',
+        string='Servicios en esta venta',
+        relation='combo_services'
+    )
+
+    insurance = fields.Many2one(
+        comodel_name='product.product',
+        string='Seguro en esta venta'
     )
 
     product_id = fields.Many2one(

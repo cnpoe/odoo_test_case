@@ -25,7 +25,9 @@
                             </group>
                         </group>
                         <group name="group_bottom">
-                            <field name="sale_products" required="True"/>
+                            <field name="sale_products" domain="[('type','=','product')]" required="True"/>
+                            <field name="services" domain="[('type','=','service'), ('insurance','=',False)]" required="True"/>
+                            <field name="insurance" domain="[('insurance','=',True)]" required="False"/>
                         </group>
                     </sheet>
                 </form>
