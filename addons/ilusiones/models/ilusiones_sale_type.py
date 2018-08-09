@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class ProductSaleType(models.Model):
@@ -49,3 +50,11 @@ class ProductSaleType(models.Model):
     serial_number = fields.Char(string='Número de serie', default="")
     contract = fields.Char(string='Número de contrato', default="")
     active = fields.Boolean(string='Is active?', default=True)
+
+    @api.constrains('pay_day')
+    def _check_pay_day(self):
+        for record in self:
+            if record.pay_day <= 0 or record.pay_day > 31:
+                raise ValidationError(
+                    'Día de cobro fuera de rango(1-31): %s' % record.pay_day
+                )

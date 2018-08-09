@@ -21,13 +21,13 @@
                             <group name="group_right">
                                 <field name="serial_number" attrs="{'invisible': [('sale_type','=','Plan')], 'required': [('sale_type','!=','Plan')]}"/>
                                 <field name="contract" attrs="{'invisible': [('sale_type','=','Plan')], 'required': [('sale_type','!=','Plan')]}"/>
-                                <field name="pay_day"/>
+                                <field name="pay_day" required="True"/>
                             </group>
                         </group>
                         <group name="group_bottom">
-                            <field name="sale_products" domain="[('type','=','product')]" required="True"/>
-                            <field name="services" domain="[('type','=','service'), ('insurance','=',False)]" required="True"/>
-                            <field name="insurance" domain="[('insurance','=',True)]" required="False"/>
+                            <field name="sale_products" domain="[('type','=','product')]" attrs="{'invisible': [('sale_type','=','Plan')], 'required': [('sale_type','in','(Activación, Prepago)')]}"/>
+                            <field name="services" domain="[('type','=','service'), ('insurance','=',False)]" attrs="{'invisible': [('sale_type','=','Prepago')], 'required': [('sale_type','in','(Activación, Plan)')]}"/>
+                            <field name="insurance" domain="[('insurance','=',True)]" attrs="{'invisible': [('sale_type','!=','Activación')]}" required="False"/>
                         </group>
                     </sheet>
                 </form>
