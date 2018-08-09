@@ -3,12 +3,20 @@ from odoo.exceptions import ValidationError
 
 
 class ProductSaleType(models.Model):
+    """ProductSaleType is a bundle of products.
+    Products on bundle depends of sale type.
+
+    Arguments:
+        models {Model} -- [Odoo Model]
+
+    Raises:
+        ValidationError -- [On fields constraints]
+    """
     _name = 'ilusiones.product.sale.type'
 
     # TODO: add fubnctionality for pay day recurrent invoices
     # TODO: validate integers
     pay_day = fields.Integer(string='Dia de cobro')
-    # TODO: create catalog for custom sale types
     sale_type = fields.Selection(
         selection=[
             ('Prepago', 'Prepago'),
@@ -18,7 +26,6 @@ class ProductSaleType(models.Model):
         string='Tipo de venta'
     )
 
-    # TODO: Organize products depends on service, insurance, stockable
     sale_products = fields.Many2many(
         comodel_name='product.product',
         string='Productos almacenables en esta venta',
@@ -53,6 +60,11 @@ class ProductSaleType(models.Model):
 
     @api.constrains('pay_day')
     def _check_pay_day(self):
+        """Validates range of pay day
+
+        Raises:
+            ValidationError -- Pay day must be lower than 31 and greater than 0
+        """
         for record in self:
             if record.pay_day <= 0 or record.pay_day > 31:
                 raise ValidationError(

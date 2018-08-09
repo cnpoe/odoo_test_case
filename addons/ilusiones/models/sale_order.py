@@ -5,6 +5,15 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     def prepare_line(self, product, order_id):
+        """Generates a order line with the required parameters.
+
+        Arguments:
+            product {product.product} -- Product of the order line
+            order_id {int} -- Order id
+
+        Returns:
+            dict -- Order line dictionary with required parameters
+        """
         line = {
             'layout_category_id': False,
             'product_uom': product.uom_id.id,
@@ -21,6 +30,11 @@ class SaleOrder(models.Model):
         return line
 
     def create_order_lines(self, order_line):
+        """Writes order lines for each order line with a product combo.
+
+        Arguments:
+            order_line {sale.order.line} -- Order lines of sale order.
+        """
         order_line_env = self.env['sale.order.line']
         if (order_line.product_id.type == 'combo' or
                 order_line.product_id.type == 'Combo'):
