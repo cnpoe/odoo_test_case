@@ -24,5 +24,6 @@
         'views/res_partner_view.xml',
         'views/combo_products_view.xml',
         'views/sale_order_view.xml',
+        'data/res_partner.xml',
     ],
 }

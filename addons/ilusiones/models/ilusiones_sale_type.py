@@ -58,6 +58,11 @@ class ProductSaleType(models.Model):
     contract = fields.Char(string='Número de contrato', default="")
     active = fields.Boolean(string='Is active?', default=True)
 
+    _sql_constraints = [
+        ('contract_unique', 'unique(contract)', '¡El contrato ya existe!'),
+        ('serial_number_unique', 'unique(serial_number)', '¡El número de serie ya existe!')
+    ]
+
     @api.constrains('pay_day')
     def _check_pay_day(self):
         """Validates range of pay day

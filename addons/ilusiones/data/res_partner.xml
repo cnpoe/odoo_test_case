@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="ilusiones.defaultclient1" model="res.partner">
+        <field name="name">Alberto Córdova</field>
+        <field name="customer">True</field>
+    </record>
+    <record id="ilusiones.defaultclient2" model="res.partner">
+        <field name="name">Karen Pineda</field>
+        <field name="customer">True</field>
+    </record>
+    <record id="ilusiones.defaultclient3" model="res.partner">
+        <field name="name">Andrés Sánchez</field>
+        <field name="customer">True</field>
+    </record>
+    <record id="ilusiones.defaultproduct1" model="product.product">
+        <field name="name">Mi A1</field>
+        <field name="type">product</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+    </record>
+    <record id="ilusiones.defaultproduct2" model="product.product">
+        <field name="name">Nokia 3310</field>
+        <field name="type">product</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+    </record>
+    <record id="ilusiones.defaultproduct3" model="product.product">
+        <field name="name">iPhone X</field>
+        <field name="type">product</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+    </record>
+    
+    <record id="ilusiones.defaultservice1" model="product.product">
+        <field name="name">500 minutos</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+    </record>
+    <record id="ilusiones.defaultservice2" model="product.product">
+        <field name="name">Buzón de voz</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+    </record>
+    <record id="ilusiones.defaultinsurance1" model="product.product">
+        <field name="name">Protección 55</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+        <field name="insurance">True</field>
+    </record>
+    <record id="ilusiones.defaultinsurance2" model="product.product">
+        <field name="name">Protección 105</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+        <field name="insurance">True</field>
+    </record>
+    <record id="ilusiones.defaultinsurance3" model="product.product">
+        <field name="name">Protección 155</field>
+        <field name="type">service</field>
+        <field name="categ_id" ref="product.product_category_1"/>
+        <field name="sale_ok">True</field>
+        <field name="insurance">True</field>
+    </record>
+
+    <record id="ilusiones.defaultcombo1" model="ilusiones.product.sale.type">
+        <field name="description">Combo Mi A1 - Activación</field>
+    </record>
+</odoo>
