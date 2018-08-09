@@ -8,14 +8,15 @@ class SaleOrder(models.Model):
         line = {
             'layout_category_id': False,
             'product_uom': product.uom_id.id,
-            'name': 'combito',
+            'name': product.name,
             'route_id': False,
             'product_uom_qty': 1,
             'tax_id': [[6, False, [2]]],
             'order_id': order_id,
             'product_id': product.id,
             'price_unit': 0,
-            'active': False
+            'active': False,
+            'in_combo': True,
         }
         return line
 
@@ -34,3 +35,13 @@ class SaleOrder(models.Model):
         for order_line in result.order_line:
             self.create_order_lines(order_line)
         return result
+
+    @api.multi
+    def _action_confirm(self):
+        super(SaleOrder, self)._action_confirm()
+        order_line_env = self.env['sale.order.line']
+        for order in self:
+            lines = order_line_env.with_context(active_test=False).search([
+                ('order_id', '=', order.id)
+            ])
+            lines._action_launch_procurement_rule()
