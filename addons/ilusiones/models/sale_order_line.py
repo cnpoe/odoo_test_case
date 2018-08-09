@@ -39,11 +39,8 @@ class SaleOrderLine(models.Model):
             order_line {sale.order.line} -- Order lines of sale order.
         """
         order_line_env = self.env['sale.order.line']
-        print('---------------------------------')
         if (order_line.product_id.type == 'combo' or
                 order_line.product_id.type == 'Combo'):
-            print('is combo')
-            print(order_line.product_id.product_combo.sale_products)
             for product in order_line.product_id.product_combo.sale_products:
                 if product.type == 'product':
                     values = self.prepare_line(product, order_line.order_id.id)

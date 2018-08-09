@@ -17,6 +17,4 @@ class SaleOrder(models.Model):
             lines = order_line_env.with_context(active_test=False).search([
                 ('order_id', '=', order.id)
             ])
-            print('**************************+')
-            print(lines)
             lines._action_launch_procurement_rule()
